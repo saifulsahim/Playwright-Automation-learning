@@ -1,12 +1,17 @@
 const {test, expect} =  require('@playwright/test');    
 
-test('Browser context Playwright test',async({browser}) => {
+test.only('Browser context Playwright test',async({browser}) => {
     const context = await browser.newContext(); 
     const page = await context.newPage();
+    //page.route('**/*.css', route => route.abort()); // blocking only css
+    page.route('**/*.{jpg,png,jpeg}', route => route.abort()); // blocking only images
     const userName = page.locator('#username'); 
     const signInBtn = page.locator('#signInBtn');
     const cardTitles = page.locator('.card-body a');
-   
+
+    page.on('request',request => console.log(request.url()));
+    page.on('response',response => console.log(response.url(), response.status()));
+
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
     //console.log(await page.title());
     // css -> type, fill 
@@ -59,7 +64,7 @@ test('UI Controls Playwright test',async({page}) => {
     await expect(documentLink).toHaveAttribute('class','blinkingText'); // assertion for attribute
 });     
 
-test.only('Child Window Playwright test',async({browser}) => {
+test('Child Window Playwright test',async({browser}) => {
     const context = await browser.newContext();
     const page = await context.newPage();
     const userName = page.locator('#username'); 
