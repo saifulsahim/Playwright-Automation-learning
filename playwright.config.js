@@ -10,8 +10,10 @@ const config = ({
   reporter: 'html',
   use: {
 
-    browserName: 'firefox',
-    headless: false
+    browserName: 'chromium',
+    headless: false,
+    screenshot: 'on',
+    trace: 'on',
   },
 
  
