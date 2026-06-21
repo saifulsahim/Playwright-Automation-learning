@@ -12,5 +12,11 @@ test('Screenshot & Visual comparison Validations',async({page}) => {
     await expect(page.locator("#displayed-text")).toBeHidden();
   
 });
+
+test.only('Visal testing', async({page}) => {
+    await page.goto("https://google.com/");
+    expect(await page.screenshot()).toMatchSnapshot('landing.png');
+ 
+});
    
 
