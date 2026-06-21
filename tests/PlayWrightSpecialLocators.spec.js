@@ -11,5 +11,4 @@ test('Playwright special locators',async({page}) => {
     await page.getByRole("link", { name: "Shop" }).click();
     //await page.locator("app-card").filter({ hasText: "Blackberry" }).getByRole("button",{ name: "Add" }).click();  
     await page.locator("app-card").filter({ hasText: "Blackberry" }).getByRole("button").click();  // As there is only one button in the card, so we can skip the name locator
-    await page.pause();
 });  

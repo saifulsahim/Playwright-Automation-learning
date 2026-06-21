@@ -1,6 +1,6 @@
 const {test, expect} =  require('@playwright/test');    
 
-test.only('Browser context- Validating Error login',async({page}) => {
+test('Browser context- Validating Error login',async({page}) => {
     const products = page.locator('.card-body');
     const email =  'saifulsahim@gmail.com';
     await page.goto('https://rahulshettyacademy.com/client/');
@@ -56,6 +56,5 @@ test.only('Browser context- Validating Error login',async({page}) => {
     }
    const orderIdDetails = await page.locator(".col-text").textContent();
    expect(orderId.includes(orderIdDetails)).toBeTruthy();
-   await page.pause();
 });     
  

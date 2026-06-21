@@ -7,12 +7,12 @@ let response;
 
 test.beforeAll(async () => {
     const apiContext = await request.newContext();
-    const apiUtils = new ApiUtils(apiContext, loginPayload);
+    const apiUtils =  new ApiUtils(apiContext, loginPayload);
     response = await apiUtils.createOrder(orderPayload);
 
 });
 
-test('Verify if created order is showing in the order history page', async ({ page }) => {
+test('Verify created order is showing in the order history page', async ({ page }) => {
     await page.addInitScript(value => {
         window.localStorage.setItem('token', value);
     }, response.token);

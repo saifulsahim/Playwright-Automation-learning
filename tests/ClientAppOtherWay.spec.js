@@ -1,6 +1,6 @@
 const {test, expect} =  require('@playwright/test');    
 
-test.only('Browser context- Validating Error login',async({page}) => {
+test('Browser context- Validating Error login',async({page}) => {
     const email = "anshika@gmail.com";
    const productName = 'ZARA COAT 3';
    const products = page.locator(".card-body");
