@@ -28,10 +28,11 @@ const config = ({
         browserName: 'chromium',
         headless: false,
         screenshot: 'on', 
+        video : 'retain-on-failure',
         trace: 'on',
         ignoreHttpsErrors : true,
         permissions: ['geolocation'],
-        //viewport : {width : 720, height : 720}
+        viewport : {width : 720, height : 720}
        //...devices['Galaxy Tab S4'],
       },
     }
