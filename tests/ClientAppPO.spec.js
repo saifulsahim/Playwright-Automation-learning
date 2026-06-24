@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+const{customtest} = require('../utils/test-base');
 const { POManager } = require('../pageobjects/POManager');
 // JSON -> string -> JS object
 const dataset = JSON.parse(JSON.stringify(require("../utils/placeOrderTestData.json")));
@@ -31,3 +32,21 @@ for (const data of dataset) {
 
     });
 }
+
+ customtest.only(`End to end ecommerce flow`, async ({ page, testDataForOrder }) => {
+        const poManager = new POManager(page);
+        const loginPage = poManager.getLoginPage();
+        const dashboardPage = poManager.getDashboardPage();
+        const cartPage = poManager.getCartPage();
+        const checkoutPage = poManager.getCheckOutPage();
+        const orderHistoryPage = poManager.getOrderHistoryPage();
+
+        await loginPage.goTo();
+        await loginPage.validLogin(testDataForOrder.username, testDataForOrder.password);
+
+        await dashboardPage.searchProductAddToCart(testDataForOrder.productName);
+        await dashboardPage.navigateToCart();
+
+        await cartPage.verifyProductIsDisplayed(testDataForOrder.productName);
+        await cartPage.Checkout();
+    })
