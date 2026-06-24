@@ -10,13 +10,14 @@ const config = ({
   reporter: 'html',
   projects: [
     {
-      name: 'firefox',
+      name: 'safari',
       use: {
 
-        browserName: 'firefox',
+        browserName: 'webkit',
         headless: false,
         screenshot: 'off',
         trace: 'on',
+        ...devices['iPhone 11 Pro Max'],
       },
 
     },
@@ -28,6 +29,10 @@ const config = ({
         headless: false,
         screenshot: 'on', 
         trace: 'on',
+        ignoreHttpsErrors : true,
+        permissions: ['geolocation'],
+        //viewport : {width : 720, height : 720}
+       //...devices['Galaxy Tab S4'],
       },
     }
 
