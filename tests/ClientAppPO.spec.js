@@ -33,7 +33,7 @@ for (const data of dataset) {
     });
 }
 
- customtest.only(`End to end ecommerce flow`, async ({ page, testDataForOrder }) => {
+ customtest(`End to end ecommerce flow`, async ({ page, testDataForOrder }) => {
         const poManager = new POManager(page);
         const loginPage = poManager.getLoginPage();
         const dashboardPage = poManager.getDashboardPage();
