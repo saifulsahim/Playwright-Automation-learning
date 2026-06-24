@@ -1,13 +1,10 @@
 const { test, expect } = require('@playwright/test');
 const { POManager } = require('../pageobjects/POManager');
-
+// JSON -> string -> JS object
+const dataset = JSON.parse(JSON.stringify(require("../utils/placeOrderTestData.json")));
 
 test('End to end ecommerce flow', async ({ page }) => {
     const poManager = new POManager(page);
-    const products = page.locator('.card-body');
-    const username = 'saifulsahim@gmail.com';
-    const password = 'Sahim123#';
-    const productName = "ZARA COAT 3";
     const loginPage = poManager.getLoginPage();
     const dashboardPage = poManager.getDashboardPage();
     const cartPage = poManager.getCartPage();
@@ -15,16 +12,16 @@ test('End to end ecommerce flow', async ({ page }) => {
     const orderHistoryPage = poManager.getOrderHistoryPage();
 
     await loginPage.goTo();
-    await loginPage.validLogin(username, password);
+    await loginPage.validLogin(dataset.username, dataset.password);
 
-    await dashboardPage.searchProductAddToCart(productName);
+    await dashboardPage.searchProductAddToCart(dataset.productName);
     await dashboardPage.navigateToCart();
 
-    await cartPage.verifyProductIsDisplayed(productName);
+    await cartPage.verifyProductIsDisplayed(dataset.productName);
     await cartPage.Checkout();
 
     await checkoutPage.searchCountryAndSelect("ban", "Bangladesh");
-    await checkoutPage.VerifyEmailId(username);
+    await checkoutPage.VerifyEmailId(dataset.username);
     const orderId = await checkoutPage.submitAndGetOrderId();
     await dashboardPage.navigatoToOrders();
 
