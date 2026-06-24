@@ -1,5 +1,5 @@
 const { test, expect, request } = require('@playwright/test');
-const { ApiUtils } = require('./utils/ApiUtils');
+const { ApiUtils } = require('../utils/ApiUtils');
 
 const loginPayload = { userEmail: "saifulsahim@gmail.com", userPassword: "Sahim123#" };
 const orderPayload = { orders: [{ country: "Bangladesh", productOrderedId: "6960eac0c941646b7a8b3e68" }] };
