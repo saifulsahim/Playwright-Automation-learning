@@ -22,6 +22,6 @@ test('More Validations Playwright test',async({page}) => {
     const framePage = page.frameLocator("#courses-iframe");
     await framePage.locator("li a[href*='lifetime-access']:visible").click();
     const frameText = await framePage.locator(".text h2").textContent();
-    console.log(frameText.split(" ")[1]);
+    //console.log(frameText.split(" ")[1]);
 });
    

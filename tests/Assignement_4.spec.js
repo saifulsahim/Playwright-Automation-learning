@@ -17,7 +17,7 @@ async function loginAs(page, user) {
     await page.goto(`${BASE_URL}/events`);
 }
 
-test.only("Assignment: Cross-User Booking Access Denied", async ({ page, request }) => {
+test("Assignment: Cross-User Booking Access Denied", async ({ page, request }) => {
     // Step 1 — Login as Yahoo user via API  -
     const loginRes = await request.post(`${API_URL}/auth/login`, {
         data: { email: YAHOO_USER.email, password: YAHOO_USER.password },
@@ -70,8 +70,4 @@ test.only("Assignment: Cross-User Booking Access Denied", async ({ page, request
 
 });
 
-test("Test 2 — Banner is NOT visible when 4 events are returned", async ({ page }) => {
-
-
-})
 

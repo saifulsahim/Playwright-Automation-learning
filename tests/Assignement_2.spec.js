@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
 const console = require("node:console");
 
-test("Assignment", async ({ page }) => {
+test("Assignment 2 ", async ({ page }) => {
     const BASE_URL = 'https://eventhub.rahulshettyacademy.com'
     //Step 1 — Login
     await page.goto(`${BASE_URL}/login`);
@@ -31,9 +31,9 @@ test("Assignment", async ({ page }) => {
 
     // Step 4 - Validate booking ref first letter matches event name first letter
     const bookingRef = await page.locator('span.font-mono.font-bold').textContent();
-    console.log("bookingRef", bookingRef);
+    //console.log("bookingRef", bookingRef);
     const eventTitle = await page.locator('h1').textContent();
-    console.log("eventTitle", eventTitle);
+    //console.log("eventTitle", eventTitle);
     expect(bookingRef.charAt(0)).toBe(eventTitle.charAt(0));
 
     // Step 5 — Check refund eligibility
@@ -49,7 +49,7 @@ test("Assignment", async ({ page }) => {
 
 });
 
-test.only("refund not eligible for group ticket booking", async ({ page }) => {
+test("refund not eligible for group ticket booking", async ({ page }) => {
     const BASE_URL = 'https://eventhub.rahulshettyacademy.com'
     await page.goto(`${BASE_URL}/login`);
     await page.getByLabel("Email").click();

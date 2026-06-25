@@ -1,6 +1,6 @@
 const {test, expect} =  require('@playwright/test');    
 
-test.only('Browser context Playwright test',async({browser}) => {
+test('Browser context Playwright test',async({browser}) => {
     const context = await browser.newContext(); 
     const page = await context.newPage();
     //page.route('**/*.css', route => route.abort()); // blocking only css
@@ -9,8 +9,8 @@ test.only('Browser context Playwright test',async({browser}) => {
     const signInBtn = page.locator('#signInBtn');
     const cardTitles = page.locator('.card-body a');
 
-    page.on('request',request => console.log(request.url()));
-    page.on('response',response => console.log(response.url(), response.status()));
+   // page.on('request',request => console.log(request.url()));
+    //page.on('response',response => console.log(response.url(), response.status()));
 
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
     //console.log(await page.title());
@@ -26,10 +26,10 @@ test.only('Browser context Playwright test',async({browser}) => {
     await signInBtn.click();   
 
     //console.log(await page.locator(".card-body a").first().textContent());
-    console.log(await cardTitles.nth(2).textContent()); // grab one specific title
+    //console.log(await cardTitles.nth(2).textContent()); // grab one specific title
     //await expect(cardTitles.first()).toBeVisible();
     const allTitles = await cardTitles.allTextContents(); // grab all titles
-    console.log("tessst",allTitles);
+   // console.log("tessst",allTitles);
 });    
  
 test('Page Playwright test',async({page}) => {  
@@ -81,6 +81,6 @@ test('Child Window Playwright test',async({browser}) => {
    
     await page.locator('#username').type(domain); 
     //await page.pause(); 
-    console.log(await page.locator('#username').inputValue());        
+    //console.log(await page.locator('#username').inputValue());        
 });
  

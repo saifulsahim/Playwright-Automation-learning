@@ -18,7 +18,7 @@ test.beforeAll(async ({ browser }) => {
 
 })
 
-test('Client App login', async ({ }) => {
+test('Client App login API', async ({ }) => {
     const page = await webContext.newPage();
     await page.goto('https://rahulshettyacademy.com/client/');
     const products = page.locator('.card-body');
@@ -54,8 +54,7 @@ test('Client App login', async ({ }) => {
     await page.locator(".action__submit").click();
     await expect(page.locator(".hero-primary")).toHaveText("Thankyou for the order.");
     const orderId = await page.locator(".em-spacer-1 .ng-star-inserted").textContent();
-    console.log("order", orderId);
-
+    
     await page.locator("button[routerlink*='myorders']").click();
     await page.locator("tbody tr").first().waitFor();
     const orderRows = page.locator("tbody tr");
@@ -79,6 +78,5 @@ test('Test case 2', async ({ }) => {
 
     await page.locator(".card-body b").first().waitFor(); // wait for the card body to be visible
     const titles = await page.locator('.card-body b').allTextContents();
-    console.log(titles);
 });
 

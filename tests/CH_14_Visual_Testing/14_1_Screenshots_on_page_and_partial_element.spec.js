@@ -13,10 +13,12 @@ test('Screenshot & Visual comparison Validations',async({page}) => {
   
 });
 
+/*
 test.only('Visal testing', async({page}) => {
     await page.goto("https://google.com/");
     expect(await page.screenshot()).toMatchSnapshot('landing.png');
  
 });
+*/
    
 

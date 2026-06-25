@@ -51,7 +51,7 @@ test("Assignment", async ({ page }) => {
 
     // Step 6 — Verify booking confirmation
      const bookingRefEl = await page.locator('.booking-ref').innerText();
-     console.log("ref",bookingRefEl);
+     //console.log("ref",bookingRefEl);
 
      expect(bookingRefEl.charAt(0)).toBe(eventTitle.trim().charAt(0).toUpperCase());
 
@@ -64,7 +64,7 @@ test("Assignment", async ({ page }) => {
       await expect(matchingCard).toBeVisible();
       await expect(matchingCard).toContainText(eventTitle);
 
-      console.log(`Booking card found in My Bookings for ref: ${bookingRefEl}`);
+     // console.log(`Booking card found in My Bookings for ref: ${bookingRefEl}`);
 
     
       //Step 8 — Verify seat count decreased by 1

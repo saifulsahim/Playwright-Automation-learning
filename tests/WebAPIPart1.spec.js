@@ -34,7 +34,7 @@ test('Verify created order is showing in the order history page', async ({ page 
         }
     }
     const orderIdDetails = await page.locator(".col-text").textContent();
-    await page.pause();
+    //await page.pause();
     expect(response.orderId.includes(orderIdDetails)).toBeTruthy();
 });
 

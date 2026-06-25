@@ -1,6 +1,6 @@
 const {test, expect} =  require('@playwright/test');    
 
-test('Browser context- Validating Error login',async({page}) => {
+test('Client App login',async({page}) => {
     const products = page.locator('.card-body');
     const email =  'saifulsahim@gmail.com';
     await page.goto('https://rahulshettyacademy.com/client/');
