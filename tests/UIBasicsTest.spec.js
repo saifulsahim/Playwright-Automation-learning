@@ -1,6 +1,6 @@
 const {test, expect} =  require('@playwright/test');    
 
-test('Browser context Playwright test',async({browser}) => {
+test('@Web Browser context Playwright test',async({browser}) => {
     const context = await browser.newContext(); 
     const page = await context.newPage();
     //page.route('**/*.css', route => route.abort()); // blocking only css
@@ -39,7 +39,7 @@ test('Page Playwright test',async({page}) => {
  
 });    
 
-test('UI Controls Playwright test',async({page}) => {
+test('@Web UI Controls Playwright test',async({page}) => {
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
     const userName = page.locator('#username'); 
     const signInBtn = page.locator('#signInBtn');

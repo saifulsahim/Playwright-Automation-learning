@@ -5,7 +5,7 @@ const { POManager } = require('../pageobjects/POManager');
 const dataset = JSON.parse(JSON.stringify(require("../utils/placeOrderTestData.json")));
 
 for (const data of dataset) {
-    test(`End to end ecommerce flow ${data.productName}`, async ({ page }) => {
+    test(`@Web End to end ecommerce flow ${data.productName}`, async ({ page }) => {
         const poManager = new POManager(page);
         const loginPage = poManager.getLoginPage();
         const dashboardPage = poManager.getDashboardPage();

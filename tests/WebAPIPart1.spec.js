@@ -12,7 +12,7 @@ test.beforeAll(async () => {
 
 });
 
-test('Verify created order is showing in the order history page', async ({ page }) => {
+test('@API Verify created order is showing in the order history page', async ({ page }) => {
     await page.addInitScript(value => {
         window.localStorage.setItem('token', value);
     }, response.token);
