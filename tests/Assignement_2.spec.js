@@ -1,6 +1,7 @@
 const { test, expect } = require("@playwright/test");
 const console = require("node:console");
 
+test.describe.configure({mode : 'parallel'});
 test("Assignment 2 ", async ({ page }) => {
     const BASE_URL = 'https://eventhub.rahulshettyacademy.com'
     //Step 1 — Login
