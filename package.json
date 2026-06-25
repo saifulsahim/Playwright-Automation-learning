@@ -12,9 +12,11 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.1",
+    "allure-commandline": "^2.43.0",
+    "allure-playwright": "^3.10.1"
   },
   "dependencies": {
-    "exceljs" : "^4.4.0"
+    "exceljs": "^4.4.0"
   }
 }

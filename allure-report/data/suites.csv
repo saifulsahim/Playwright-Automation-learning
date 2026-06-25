@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4041","@Web UI Controls Playwright test","","2026-06-25","passed","2026-06-25","","UIBasicsTest.spec.js","",""
+"","5619","@Web More Validations Playwright test","","2026-06-25","passed","2026-06-25","","MoreValidations.spec.js","",""
+"","8670","@Web End to end ecommerce flow ZARA COAT 3","","2026-06-25","passed","2026-06-25","","ClientAppPO.spec.js","",""
+"","7076","@Web End to end ecommerce flow ADIDAS ORIGINAL","","2026-06-25","passed","2026-06-25","","ClientAppPO.spec.js","",""
+"","6147","@Web Browser context Playwright test","","2026-06-25","passed","2026-06-25","","UIBasicsTest.spec.js","",""
