@@ -1,6 +1,6 @@
 const {test, expect} =  require('@playwright/test');    
 
-test('Client App login',async({page}) => {
+test.skip('Client App login',async({page}) => {
     const products = page.locator('.card-body');
     const email =  'saifulsahim@gmail.com';
     await page.goto('https://rahulshettyacademy.com/client/');

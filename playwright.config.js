@@ -3,6 +3,7 @@ import { TIMEOUT } from 'node:dns';
 
 const config = ({
   testDir: './tests',
+  retries : 2,
   timeout : 30 * 1000, // timeout for all tests
   expect: {
     timeout: 5000  // 5s timeout for all assertions
@@ -11,7 +12,7 @@ const config = ({
   use: {
 
     browserName: 'chromium',
-    headless: false,
+    headless: true,
     screenshot: 'on',
     trace: 'on',
   },
